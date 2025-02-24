@@ -1,0 +1,139 @@
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #4caf50;
+    --color-secondary: #333;
+    --color-light-gray: #f0f0f0;
+    --color-dark-gray: #e9ecef;
+    --color-white: #ffffff;
+    --color-background: #1F2641;
+    --transition: all 0.3s ease;
+}
+
+/* Body */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-white);
+    animation: fadeInBody 1.5s ease-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Container */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideInContainer 1s ease-out;
+}
+
+/* Slide-in animation */
+@keyframes slideInContainer {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Card */
+.card {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    animation: scaleUpCard 1s ease-out;
+}
+
+/* Card scale-up animation */
+@keyframes scaleUpCard {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.card h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    animation: fadeInTitle 1.2s ease-out;
+}
+
+/* Fade-in title animation */
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card button {
+    background-color: var(--color-primary);
+    border: none;
+    color: var(--color-white);
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.card button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Image */
+.card img {
+    width: 100%; /* Ensures it adapts to card width */
+    max-width: 200px; /* Limits the max size */
+    height: auto; /* Maintains aspect ratio */
+    display: block;
+    margin: 0 auto; /* Centers the image */
+    border-radius: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .card {
+        max-width: 90%;
+    }
+}

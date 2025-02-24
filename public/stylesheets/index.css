@@ -1,0 +1,292 @@
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #ffffff; /* White */
+    --color-secondary: #f4f4f4; /* Light Gray */
+    --color-light-gray: #fafafa; /* Lighter Gray */
+    --color-dark-gray: #2d2d2d; /* Dark Gray */
+    --color-white: #ffffff; /* White */
+    --color-button-bg: #28a745; /* Green Button */
+    --color-button-hover: #218838; /* Darker Green on Hover */
+    --color-input-bg: #ffffff; /* White Input Background */
+    --color-input-border: #e0e0e0; /* Very Light Border */
+    --transition: all 0.3s ease; /* Smooth transition */
+    --animation-duration: 1s; /* Animation duration */
+}
+
+/* Body Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-light-gray);
+    color: var(--color-dark-gray);
+    animation: fadeInBody 1.5s ease-out; /* Body fade-in */
+    overflow-x: hidden;
+}
+
+/* Keyframe for Fade-in Body */
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: flex-start; /* Align container items to the left */
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    animation: slideInContainer 1s ease-out; /* Container slide-in */
+    width: 100%;
+}
+
+/* Keyframe for Slide-in Container */
+@keyframes slideInContainer {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Card */
+.card {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    padding: 1.5rem; /* Reduced padding */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px; /* Reduced width */
+    min-height: 320px; /* Reduced height */
+    border: 1px solid var(--color-input-border);
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+    animation: scaleUpCard 1s ease-out; /* Card scale-up */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%; /* Move card slightly to the right */
+}
+
+/* Keyframe for Scale-up Card */
+@keyframes scaleUpCard {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Title */
+h2 {
+    text-align: center;
+    color: var(--color-dark-gray);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    animation: fadeInTitle 1.2s ease-out; /* Title fade-in */
+}
+
+/* Keyframe for Fade-in Title */
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Input Styles */
+.form-control {
+    background-color: var(--color-input-bg);
+    border: 1px solid var(--color-input-border);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    transition: var(--transition);
+    opacity: 0;
+    animation: fadeInInput 1s ease-out forwards; /* Input fade-in */
+    animation-delay: 0.5s;
+    width: 100%;
+}
+
+/* Keyframe for Fade-in Input */
+@keyframes fadeInInput {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.form-control:focus {
+    border-color: var(--color-dark-gray);
+    outline: none;
+}
+
+/* Button Styling */
+.btn {
+    background-color: var(--color-button-bg); /* Green color */
+    color: var(--color-white);
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    transition: var(--transition);
+    opacity: 0;
+    animation: fadeInButton 1s ease-out forwards; /* Button fade-in */
+    animation-delay: 1s;
+}
+
+/* Keyframe for Fade-in Button */
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.btn:hover {
+    background-color: var(--color-button-hover); /* Darker green on hover */
+    cursor: pointer;
+    transform: scale(1.05); /* Slight grow effect */
+}
+
+/* Links */
+.text-primary {
+    color: var(--color-dark-gray);
+    animation: fadeInLink 1.5s ease-out;
+    animation-delay: 1.5s;
+    white-space: nowrap; /* Prevent line break */
+    display: inline-block; /* Keep in a single line */
+}
+
+/* Keyframe for Link Fade-in */
+@keyframes fadeInLink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Link Hover */
+a:hover {
+    color: var(--color-dark-gray);
+    text-decoration: underline;
+}
+
+/* Image Section */
+.col-lg-6 img {
+    border-radius: 15px;
+    object-fit: cover;
+    height: 100%;
+    animation: rotateInImage 1.5s ease-out; /* Rotate-in animation */
+}
+
+/* Keyframe for Rotate-in Image */
+@keyframes rotateInImage {
+    from {
+        transform: rotate(15deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+
+/* Background Gradient Effect */
+body {
+    background: var(--color-light-gray);
+    animation: gradientShift 15s ease infinite;
+}
+
+/* Keyframe for Gradient Shift */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+        justify-content: center; /* Center align vertically */
+        align-items: center; /* Center align horizontally */
+        display: flex;
+        min-height: 100vh; /* Ensure full height */
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+        justify-content: center; /* Center align vertically */
+        align-items: center; /* Center align horizontally */
+        display: flex;
+        min-height: 100vh; /* Full viewport height */
+    }
+
+    .card {
+        padding: 1rem;
+        width: 100%;
+        max-width: 90%; /* Slightly reduced width for better spacing */
+        margin: auto; /* Ensure center alignment */
+    }
+
+    .col-lg-6 img {
+        width: 100%;
+        height: auto;
+    }
+}
